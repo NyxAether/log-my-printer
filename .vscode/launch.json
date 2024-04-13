@@ -13,6 +13,13 @@
             "console": "integratedTerminal",
             "justMyCode": true,
             "env": {"PYTHONPATH": "${workspaceFolder}"}
+        },
+        {
+            "name": "Python: Main",
+            "type": "python",
+            "request": "launch",
+            "program": "log_my_printer/main.py",
+            "env": {"PYTHONPATH": "${workspaceFolder}"}
         }
     ]
 }
