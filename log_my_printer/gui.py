@@ -116,6 +116,3 @@ class ConfigFrame(ttk.LabelFrame):
             yaml.safe_dump(email_config.model_dump(), f)
         self.container.open_main()
 
-    def save_and_close(self) -> None:
-        self.save()
-        self.destroy()
