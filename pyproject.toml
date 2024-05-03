@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "log-my-printer"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["NyxAether <contact.nyxhemera@gmail.com>"]
 readme = "README.md"
@@ -27,3 +27,6 @@ types-requests = "^2.31.0.20240406"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+log-my-printer = 'log_my_printer.gui:lauch_app'
