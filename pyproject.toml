@@ -1,12 +1,14 @@
+requires-python = "^3.8.10"
+
 [tool.poetry]
 name = "log-my-printer"
-version = "0.1.1"
+version = "0.1.2"
 description = ""
 authors = ["NyxAether <contact.nyxhemera@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.8.10,<3.13"
 pywin32 = "^306"
 requests = "^2.31.0"
 pyyaml = "^6.0.1"
@@ -23,6 +25,7 @@ isort = "^5.13.2"
 pydantic = "^2.7.0"
 types-pyyaml = "^6.0.12.20240311"
 types-requests = "^2.31.0.20240406"
+pyinstaller = "^6.6.0"
 
 [build-system]
 requires = ["poetry-core"]

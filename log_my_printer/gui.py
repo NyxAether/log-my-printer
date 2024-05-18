@@ -1,6 +1,7 @@
 import tkinter as tk
 from pathlib import Path
 from tkinter import StringVar, ttk
+from typing import Union
 
 import yaml
 
@@ -21,7 +22,7 @@ class App(tk.Tk):
         tk.Tk.__init__(self)
         self._paths = Paths.from_defaults(working_dir=Path.cwd())
         self._print_manager = PrinterManager(SMTP2GO(self._paths.config))
-        self._frame: ttk.Frame | ttk.LabelFrame | None = None
+        self._frame: Union[ttk.Frame, ttk.LabelFrame, None] = None
         self.open_main()
 
     def open_main(self) -> None:
@@ -115,4 +116,3 @@ class ConfigFrame(ttk.LabelFrame):
         with self.paths.config.open("w") as f:
             yaml.safe_dump(email_config.model_dump(), f)
         self.container.open_main()
-

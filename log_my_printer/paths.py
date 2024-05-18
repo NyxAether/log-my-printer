@@ -1,6 +1,6 @@
 # log_my_printer/paths.py
 from pathlib import Path
-from typing import Any, TypeVar
+from typing import Any, Dict, TypeVar
 
 from appdirs import user_config_dir
 from pydantic import BaseModel
@@ -20,7 +20,7 @@ class Paths(BaseModel):
         self.config.parent.mkdir(parents=True, exist_ok=True)
 
     @classmethod
-    def _defaults_paths(cls: type[_PathsType], working_dir: Path) -> dict[str, Path]:
+    def _defaults_paths(cls, working_dir: Path) -> Dict[str, Path]:
         working_dir = working_dir.resolve()
         home_dir: Path = Path.home()
         config_dir = Path(user_config_dir(appname=app_name, appauthor=""))
@@ -33,6 +33,6 @@ class Paths(BaseModel):
         }
 
     @classmethod
-    def from_defaults(cls: type[_PathsType], working_dir: Path) -> _PathsType:
+    def from_defaults(cls, working_dir: Path) -> "Paths":
         cls._defaults_paths(working_dir)
         return cls(**cls._defaults_paths(working_dir))
